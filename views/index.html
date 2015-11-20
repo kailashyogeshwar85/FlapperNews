@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="flapperApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Flapper News</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../semantic/dist/semantic.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body ng-controller="StoryCtrl">
+	<div ng-include="'include/header.html'">		
+	</div>
+	<div class="ui container main-container cloak" ng-cloak>
+		<h1 class="teal">Flapper News</h1>
+		<div class="loader center" ng-show="loading">
+			<img class="loading" src="https://d13yacurqjgara.cloudfront.net/users/34535/screenshots/631316/loader_gif.gif" alt="loading">
+			<h4 class="teal">Loading...</h4>
+		</div>
+		<div class="stories ui comments">
+			<!-- <h3 class="ui dividing header">Comments</h3> -->
+			<div class="comment fadein" ng-repeat="story in topStories">
+				<a class="avatar">
+					<img src="../images/steve.jpg" alt="avatar">
+				</a>
+				<div class="content">
+					<a class="author" href="{{story.url}}">{{story.by}}</a>
+					<div class="metadata">
+						<div class="date">{{story.time | formatDate }}</div>
+						<div class="rating"></div>
+						<i class="star icon" style="color:gold"></i>
+						{{story.score}} Faves					
+					</div><!-- content -->
+					<div class="text">
+						{{story.title}}
+					</div>
+					<div class="actions">
+			        <a class="reply" onclick="showForm(this)">Reply</a>
+			        <a class="cmt" href="/views/comments.html?id={{story.id}}">{{story.descendants}} Comments</a>
+		      	</div><!-- actions -->
+		      	<form class="ui reply form hidden">
+			        <div class="field">
+			          <textarea></textarea>
+			        </div>
+			        <div class="ui primary submit labeled icon button">
+			          <i class="icon edit"></i> Add Reply
+			        </div>
+			      </form>
+				</div><!-- content -->	
+			</div><!-- comment -->
+		</div><!-- comments -->		
+	</div><!-- main-container -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>	
+	<script type="text/javascript" src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>		  	 	  	 
+	<script type="text/javascript" src="../semantic/dist/semantic.js"></script>
+	<script type="text/javascript" src="../js/app.js"></script>
+	<script type="text/javascript" src="../js/routes.js"></script>	 
+	<script type="text/javascript" src="../js/PostController.js"></script>
+	<script type="text/javascript" src="../js/Post.js"></script>
+	<script type="text/javascript" src="../js/filters/filters.js"></script>
+</body>
+</html>

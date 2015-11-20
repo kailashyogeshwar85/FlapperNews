@@ -1,0 +1,35 @@
+html,body{
+	height:auto;
+}
+.header img{
+	margin-right: 10px !important 
+}
+.main.menu.fixed {
+    background-color: #FFFFFF;
+    border: 1px solid #DDD;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.main-container {
+	margin-top: 64px;
+}
+.teal{
+	color:#00B5AD !important;
+}
+
+.hidden{
+	display:none;
+}
+.stories {
+	overflow: hidden;
+}
+.center {
+	text-align:center;
+}
+.stories{
+	height:650px;
+	overflow:hidden;
+}
+.comment-avatar{
+	width:150px;
+	height:150px;
+}
